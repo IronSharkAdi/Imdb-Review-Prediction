@@ -6,13 +6,13 @@ data = keras.datasets.imdb
 
 (train_data , train_labels) , (test_data , test_labels) = data.load_data(num_words=88000)
 
-print("--------------------------datas-----------------------------------")
-print(" ")
-print(train_data[0])
-print(train_labels[0])
-print(test_data[0])
-print(test_labels[0])
-print(" ")
+# print("--------------------------datas-----------------------------------")
+# print(" ")
+# print(train_data[0])
+# print(train_labels[0])
+# print(test_data[0])
+# print(test_labels[0])
+# print(" ")
 
 word_index = data.get_word_index()
 
@@ -72,7 +72,7 @@ x = np.argmax(predict[0])
 print("Prediction : " + str(x))
 print("Actual : " + str(test_labels[0]))
 
-model.save("model.h5")
+# model.save("model.h5")
 
 def review_encode(s):
 	encoded = [1]
@@ -91,6 +91,6 @@ with open("test.txt", encoding="utf-8") as f:
 		encode = review_encode(nline)
 		encode = keras.preprocessing.sequence.pad_sequences([encode], value=word_index["<PAD>"], padding="post", maxlen=250) # make the data 250 words long
 		predict = model.predict(encode)
-		print(line)
+		print(line)f 
 		print(encode)
 		print(predict[0])
