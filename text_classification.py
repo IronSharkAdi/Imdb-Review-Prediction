@@ -91,6 +91,6 @@ with open("test.txt", encoding="utf-8") as f:
 		encode = review_encode(nline)
 		encode = keras.preprocessing.sequence.pad_sequences([encode], value=word_index["<PAD>"], padding="post", maxlen=250) # make the data 250 words long
 		predict = model.predict(encode)
-		print(line)f 
+		print(line) 
 		print(encode)
 		print(predict[0])

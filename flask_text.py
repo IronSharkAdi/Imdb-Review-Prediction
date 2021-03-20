@@ -40,4 +40,4 @@ def make_prediction(predicted_text) :
 	    encode = review_encode(nline)
 	    encode = keras.preprocessing.sequence.pad_sequences([encode], value=word_index["<PAD>"], padding="post", maxlen=250) # make the data 250 words long
 	    predict = model.predict(encode)
-	return predict
+		return predict
